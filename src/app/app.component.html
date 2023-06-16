@@ -1,0 +1,25 @@
+<div class="appContainer">
+  <nav class="navbar">
+    <div class="hamburger" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+  <div class="sidebar" [ngClass]="{ active: isSidebarOpen }">
+    <div class="sideNav">
+      <div class="sideNavTop">
+        <div class="NavTopImg"></div>
+      </div>
+      <div class="sideNavBottom">
+        <a routerLink="/employee" (click)="navigateAndCloseSidebar()"
+          >พนักงานทั้งหมด</a
+        >
+        <a routerLink="/employee/add" (click)="navigateAndCloseSidebar()"
+          >เพิ่มพนักงาน</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

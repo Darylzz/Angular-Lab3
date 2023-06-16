@@ -1,0 +1,164 @@
+<div class="modifyEmployeeFormContainer">
+  <div class="modifyEmployeeInput">
+    <span class="p-float-label">
+      <input
+        id="floatInputEmpID"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="empID"
+        [disabled]="isModified"
+      />
+      <label for="floatInputEmpID">รหัสพนักงาน</label>
+    </span>
+    <span class="p-float-label">
+      <input
+        id="floatInputFirstNameTH"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="firstNameTH"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputFirstNameTH">ชื่อ (ไทย)</label>
+    </span>
+    <span class="p-float-label">
+      <input
+        id="floatInputLastNameTH"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="lastNameTH"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputLastNameTH">นามสกุล (ไทย)</label>
+    </span>
+    <span class="p-float-label">
+      <input
+        id="floatInputFirstNameEN"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="firstNameEN"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputFirstNameEN">ชื่อ (English)</label>
+    </span>
+    <span class="p-float-label">
+      <input
+        id="floatInputLastNameEN"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="lastNameEN"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputLastNameEN">นามสกุล (English)</label>
+    </span>
+    <span class="p-float-label">
+      <input
+        id="floatInputNickName"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="nickName"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputNickName">ชื่อเล่น</label>
+    </span>
+    <p-dropdown
+      [options]="department"
+      [(ngModel)]="departmentID"
+      [style]="{ width: '272px' }"
+      (change)="onFieldChange()"
+    ></p-dropdown>
+    <p-dropdown
+      [options]="position"
+      [(ngModel)]="positionID"
+      [style]="{ width: '272px' }"
+      (change)="onFieldChange()"
+    ></p-dropdown>
+    <span class="p-float-label">
+      <input
+        id="floatInputEmail"
+        type="email"
+        size="30"
+        pInputText
+        [(ngModel)]="email"
+        (change)="onFieldChange()"
+      />
+      <label for="floatInputEmail">Email</label>
+    </span>
+    <span class="p-float-label" *ngIf="!isModified">
+      <input
+        id="floatInputTelephone"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="telephone"
+        *ngIf="!isModified"
+      />
+      <label for="floatInputEmail" *ngIf="!isModified">Telephone</label>
+    </span>
+    <span class="p-float-label" *ngIf="!isModified">
+      <input
+        id="floatInputProfilePath"
+        type="text"
+        size="30"
+        pInputText
+        [(ngModel)]="profilePath"
+        *ngIf="!isModified"
+      />
+      <label for="floatInputEmail" *ngIf="!isModified">ProfilePath</label>
+    </span>
+    <p-calendar
+      [(ngModel)]="birthDate"
+      [style]="{ width: '272px' }"
+      placeholder="Birth Date"
+      (change)="onFieldChange()"
+    ></p-calendar>
+    <p-calendar
+      [(ngModel)]="startDate"
+      [style]="{ width: '272px' }"
+      placeholder="Start Date"
+      (change)="onFieldChange()"
+    ></p-calendar>
+  </div>
+  <div class="modifyEmployeeButton">
+    <div class="buttonLeft">
+      <button
+        pButton
+        class="ui-raised-button buttonRed"
+        *ngIf="isModified"
+        (click)="clickToDelete()"
+      >
+        ลบพนักงาน
+      </button>
+    </div>
+    <div class="buttonRight">
+      <button
+        pButton
+        class="ui-raised-button buttonTranparent"
+        (click)="clickBack()"
+      >
+        กลับหน้าค้นหา
+      </button>
+      <button
+        pButton
+        class="ui-raised-button buttonGreen"
+        *ngIf="isModified"
+        (click)="onModifyEmployee()"
+      >
+        บันทึก
+      </button>
+      <button
+        pButton
+        class="ui-raised-button buttonGreen"
+        *ngIf="!isModified"
+        (click)="onSubmitForm()"
+      >
+        บันทึก
+      </button>
+    </div>
+  </div>
+</div>

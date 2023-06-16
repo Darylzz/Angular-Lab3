@@ -1,0 +1,9 @@
+.modifyEmployeeContainer {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.modifyEmployeeForm {
+  background-color: rgb(183, 183, 183);
+  height: 80%;
+}

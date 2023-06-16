@@ -1,0 +1,35 @@
+<div class="getAllEmployeeContentContainer">
+  <div class="getAllEmployeeContent">
+    <div
+      class="cardContainer"
+      *ngFor="
+        let employee of employees.slice(
+          (currentPage - 1) * rows,
+          currentPage * rows
+        );
+        let i = index
+      "
+      (click)="clickToModify(i)"
+    >
+      <p-card>
+        <div class="flex">
+          <p-header>
+            <p>ชื่อเล่น : {{ employee.nickName }}</p>
+            <p>ชื่อ : {{ employee.firstNameTH }}</p>
+            <p>นามสกุล : {{ employee.lastNameTH }}</p>
+            <p>แผนก : {{ employee.department?.shortNameEN }}</p>
+          </p-header>
+          <img
+            src="https://gdb.voanews.com/24A4525A-A09E-42FF-A1CE-B0C291CE5325_cx0_cy11_cw0_w1023_r1_s.jpg"
+            alt=""
+          />
+        </div>
+      </p-card>
+    </div>
+  </div>
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="employees.length"
+    (onPageChange)="onPageChange($event)"
+  ></p-paginator>
+</div>

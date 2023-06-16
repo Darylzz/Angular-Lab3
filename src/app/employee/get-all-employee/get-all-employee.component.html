@@ -1,0 +1,59 @@
+<div class="getAllEmployeeContainer">
+  <div class="getAllEmployeeSearch">
+    <h1>ค้นหา</h1>
+    <div class="getAllEmployeeSearchForm">
+      <div class="getAllEmployeeSearchInput">
+        <span class="p-float-label">
+          <input
+            [(ngModel)]="searchFirstName"
+            id="floatInputName"
+            type="text"
+            size="30"
+            pInputText
+            (keyup.enter)="searchEmployees()"
+          />
+          <label for="floatInputName">ชื่อ</label>
+        </span>
+        <span class="p-float-label">
+          <input
+            [(ngModel)]="searchLastName"
+            id="floatInputLatName"
+            type="text"
+            size="30"
+            pInputText
+            (keyup.enter)="searchEmployees()"
+          />
+          <label for="floatInputLastName">นามสกุล</label>
+        </span>
+        <span class="p-float-label">
+          <input
+            [(ngModel)]="searchNickName"
+            id="floatInputNickName"
+            type="text"
+            size="30"
+            pInputText
+            (keyup.enter)="searchEmployees()"
+          />
+          <label for="floatInputNickName">ชื่อเล่น</label>
+        </span>
+      </div>
+      <div class="getAllEmployeeSearchButton">
+        <button
+          type="button"
+          pButton
+          label="ล้างค่า"
+          class="ui-button-raised uiButtonClear"
+          (click)="clearSearch()"
+        ></button>
+        <button
+          pButton
+          type="button"
+          label="ค้นหา"
+          class="ui-button-raised uiButtonSearch"
+          (click)="searchEmployees()"
+        ></button>
+      </div>
+    </div>
+  </div>
+  <app-get-all-employee-content></app-get-all-employee-content>
+</div>

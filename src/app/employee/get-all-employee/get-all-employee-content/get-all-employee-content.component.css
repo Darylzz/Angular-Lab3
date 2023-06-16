@@ -1,0 +1,21 @@
+.getAllEmployeeContentContainer {
+  height: 100%;
+  padding-top: 20px;
+}
+.getAllEmployeeContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.cardContainer {
+  width: 300px;
+}
+.cardContainer img {
+  height: 30%;
+  width: 30%;
+  padding-top: 10px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
